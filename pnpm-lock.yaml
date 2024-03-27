@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@hookform/resolvers':
-    specifier: ^3.3.1
+    specifier: ^3.3.4
     version: 3.3.4(react-hook-form@7.51.1)
   '@kinde-oss/kinde-auth-nextjs':
     specifier: ^1.8.18
@@ -33,7 +33,7 @@ dependencies:
     specifier: ^1.0.5
     version: 1.0.5(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-dropdown-menu':
-    specifier: ^2.0.5
+    specifier: ^2.0.6
     version: 2.0.6(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-progress':
     specifier: ^1.0.3
@@ -129,7 +129,7 @@ dependencies:
     specifier: ^14.2.3
     version: 14.2.3(react@18.2.0)
   react-hook-form:
-    specifier: ^7.46.2
+    specifier: ^7.51.1
     version: 7.51.1(react@18.2.0)
   react-loading-skeleton:
     specifier: ^3.4.0
@@ -141,7 +141,7 @@ dependencies:
     specifier: ^7.7.1
     version: 7.7.1(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
   react-resize-detector:
-    specifier: ^9.1.0
+    specifier: ^9.1.1
     version: 9.1.1(react-dom@18.2.0)(react@18.2.0)
   react-textarea-autosize:
     specifier: ^8.5.3

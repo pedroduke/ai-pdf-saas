@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import 'react-loading-skeleton/dist/skeleton.css';
+import 'simplebar-react/dist/simplebar.min.css';
 
 import './globals.css';
 
