@@ -78,7 +78,7 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
           {
             createdAt: new Date().toISOString(),
             id: crypto.randomUUID(),
-            text: message, // ??????
+            text: message,
             isUserMessage: true,
           },
           ...latestPage.messages,
@@ -177,7 +177,7 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
     onSettled: async () => {
       setIsLoading(false);
 
-      await utils.getFileMessages.invalidate({ fileId }); // ?????
+      await utils.getFileMessages.invalidate({ fileId });
     },
   });
 
