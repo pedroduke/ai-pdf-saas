@@ -1,16 +1,20 @@
 import { trpc } from '@/app/_trpc/client';
 import { INFINITE_QUERY_LIMIT } from '@/config/infinite-query';
 import { Loader2, MessageSquare } from 'lucide-react';
+import { useContext } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
+import { ChatContext } from './ChatContext';
 import Message from './Message';
 
-interface MessageProps {
+interface MessagesProps {
   fileId: string;
 }
 
-const Messages = ({ fileId }: MessageProps) => {
-  const { data, isLoading, fetchNextPage } = trpc.getFilesMessages.useInfiniteQuery(
+const Messages = ({ fileId }: MessagesProps) => {
+  const { isLoading: isAiThinking } = useContext(ChatContext);
+
+  const { data, isLoading, fetchNextPage } = trpc.getFileMessages.useInfiniteQuery(
     {
       fileId,
       limit: INFINITE_QUERY_LIMIT,
@@ -34,10 +38,10 @@ const Messages = ({ fileId }: MessageProps) => {
     ),
   };
 
-  const combinedMessages = [...(true ? [loadingMessage] : []), ...(messages ?? [])];
+  const combinedMessages = [...(isAiThinking ? [loadingMessage] : []), ...(messages ?? [])];
 
   return (
-    <div className="felx max-h-[calc(100vh-3.5rem-7rem)] border-zinc-200 flex-1 flex-col-reverse gap-4 p-3 overflow-y-auto scrollbar-thumb-violet scrollbar-thumb-rounded scrollbar-track-violet-lighter scrollbar-w-2 scrolling-touch">
+    <div className="flex max-h-[calc(100vh-3.5rem-7rem)] border-zinc-200 flex-1 flex-col-reverse gap-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
       {combinedMessages && combinedMessages.length > 0 ? (
         combinedMessages.map((message, i) => {
           const isNextMessageSamePerson =
@@ -46,17 +50,18 @@ const Messages = ({ fileId }: MessageProps) => {
           if (i === combinedMessages.length - 1) {
             return (
               <Message
-                key={message.id}
+                // ref={ref}
                 message={message}
                 isNextMessageSamePerson={isNextMessageSamePerson}
+                key={message.id}
               />
             );
           } else
             return (
               <Message
-                key={message.id}
                 message={message}
                 isNextMessageSamePerson={isNextMessageSamePerson}
+                key={message.id}
               />
             );
         })

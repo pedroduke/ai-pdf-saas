@@ -24,7 +24,7 @@ CREATE TABLE "File" (
 -- CreateTable
 CREATE TABLE "Message" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "TEXT" TEXT NOT NULL,
+    "text" TEXT NOT NULL,
     "isUserMessage" BOOLEAN NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,

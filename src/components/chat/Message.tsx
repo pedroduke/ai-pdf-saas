@@ -13,6 +13,7 @@ interface MessageProps {
 const Message = ({ message, isNextMessageSamePerson }: MessageProps) => {
   return (
     <div
+      // ref={ref}
       className={cn('flex items-end', {
         'justify-end': message.isUserMessage,
       })}
@@ -30,8 +31,9 @@ const Message = ({ message, isNextMessageSamePerson }: MessageProps) => {
           <Icons.logo className="fill-zinc-300 h-3/4 w-3/4" />
         )}
       </div>
+
       <div
-        className={cn('flex flex-col space-y-2 text-base max-w-md max-2', {
+        className={cn('flex flex-col space-y-2 text-base max-w-md mx-2', {
           'order-1 items-end': message.isUserMessage,
           'order-2 items-start': !message.isUserMessage,
         })}

@@ -31,6 +31,7 @@ export const ourFileRouter = {
 
       try {
         const response = await fetch(`https://utfs.io/f/${file.key}`);
+
         const blob = await response.blob();
 
         const loader = new PDFLoader(blob);

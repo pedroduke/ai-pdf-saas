@@ -47,7 +47,7 @@ model File {
 
 model Message {
   id   String @id @default(cuid())
-  TEXT String
+  text String 
 
   isUserMessage Boolean
 
