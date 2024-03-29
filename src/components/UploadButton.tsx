@@ -108,7 +108,7 @@ const UploadDropzone = () => {
               ) : null}
 
               {isUploading ? (
-                <div className="w-full mt-4 max-w-xs max-auto">
+                <div className="w-full mt-4 max-w-xs mx-auto">
                   <Progress
                     indicatorColor={uploadProgress === 100 ? 'bg-green-600' : ''}
                     value={uploadProgress}
