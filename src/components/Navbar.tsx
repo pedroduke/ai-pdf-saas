@@ -8,6 +8,7 @@ import {
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
+import MobileNav from './MobileNav';
 import UserAccountNav from './UserAccountNav';
 
 const Navbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
             <span>pluma.</span>
           </Link>
 
-          {/* TODO: add mobile navbar */}
+          <MobileNav isAuth={!!user} />
 
           <div className="hidden items-center space-x-4 sm:flex">
             {!user ? (
