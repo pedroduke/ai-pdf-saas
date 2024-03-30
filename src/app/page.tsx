@@ -54,7 +54,7 @@ export default function Home() {
                     alt="product preview"
                     src="/dashboard-preview.jpg"
                     width={1364}
-                    height={866}
+                    height={726}
                     quality={100}
                     className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
                   />
@@ -132,7 +132,7 @@ export default function Home() {
                 alt="uploading preview"
                 src="/file-upload-preview.jpg"
                 width={1419}
-                height={732}
+                height={700}
                 quality={100}
                 className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
               />
