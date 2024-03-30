@@ -22,13 +22,6 @@ model User {
   stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
 }
 
-// enum UploadStatus {
-//   PENDING
-//   PROCESSING
-//   FAILED
-//   SUCCESS
-// }
-
 model File {
   id   String @id @default(cuid())
   name String

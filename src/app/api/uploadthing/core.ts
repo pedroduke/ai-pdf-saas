@@ -65,7 +65,6 @@ const onUploadComplete = async ({
     const { isSubscribed } = subscriptionPlan;
 
     const isProExceeded = pagesAmt > PLANS.find((plan) => plan.name === 'Pro')!.pagesPerPdf;
-
     const isFreeExceeded = pagesAmt > PLANS.find((plan) => plan.name === 'Free')!.pagesPerPdf;
 
     if ((isSubscribed && isProExceeded) || (!isSubscribed && isFreeExceeded)) {
@@ -77,6 +76,7 @@ const onUploadComplete = async ({
           id: createdFile.id,
         },
       });
+      return;
     }
 
     // vectorize and index entire document

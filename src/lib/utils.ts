@@ -46,7 +46,6 @@ export function constructMetadata({
     },
     icons,
     metadataBase: new URL('https://ai-pdf-saas-git-dev-pduques-projects.vercel.app'),
-    themeColor: '#FFF',
     ...(noIndex && {
       robots: {
         index: false,

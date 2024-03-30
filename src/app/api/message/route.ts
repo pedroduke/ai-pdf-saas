@@ -9,7 +9,7 @@ import { PineconeStore } from 'langchain/vectorstores/pinecone';
 import { NextRequest } from 'next/server';
 
 export const POST = async (req: NextRequest) => {
-  // // endpoint for asking questions to a pdf file
+  // endpoint for asking questions to a pdf file
   const body = await req.json();
   const { getUser } = getKindeServerSession();
   const user = getUser();
